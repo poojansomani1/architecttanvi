@@ -1,9 +1,17 @@
 from django.contrib import admin
 from django.urls import path
 from portfolio import views
+
 from django.conf import settings
 from django.conf.urls.static import static
 
+# SITEMAP IMPORT
+from django.contrib.sitemaps.views import sitemap
+from portfolio.sitemaps import StaticViewSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+}
 
 urlpatterns = [
 
@@ -23,6 +31,9 @@ urlpatterns = [
     path('x/<int:id>/', views.delete_project, name='delete_project'),
 
     path('e/', views.edit_profile, name='edit_profile'),
+
+    # SITEMAP URL
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 
 ]
 
