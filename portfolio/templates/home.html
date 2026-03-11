@@ -6,13 +6,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="description" content="Architect Tanvi portfolio website showing architecture projects, residential and commercial designs in Rajkot.">
+<meta name="description" content="Architect Tanvi portfolio website showing architecture projects in Rajkot.">
 
-<meta name="keywords" content="Tanvi Architect, Architect Tanvi, Architecture Rajkot, Architecture Portfolio, Architect in Rajkot">
+<meta name="keywords" content="Tanvi Architect, Architect Tanvi, Architecture Rajkot">
 
 <meta name="author" content="Architect Tanvi">
 
-<meta name="google-site-verification" content="CGL4mm6-REpcGS7bQmczO8WLdLmxGKQt2bb83ID7KSM" />
+<meta name="google-site-verification" content="CGL4mm6-REpcGS7bQmczO8WLdLmxGKQt2bb83ID7KSM">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,8 +27,6 @@ background-position:center;
 background-attachment:fixed;
 }
 
-/* INFO SECTION */
-
 .info-section{
 padding:60px;
 display:flex;
@@ -38,15 +36,11 @@ gap:10px;
 flex-wrap:wrap;
 }
 
-/* LOGO */
-
 .logo{
 width:180px;
 height:260px;
 object-fit:contain;
 }
-
-/* PROFILE IMAGE */
 
 .owner-img{
 width:180px;
@@ -56,8 +50,6 @@ object-position:center;
 border-radius:0;
 display:block;
 }
-
-/* TEXT BOX */
 
 .owner-text{
 background:rgba(255,255,255,0.85);
@@ -71,8 +63,6 @@ background:rgba(255,255,255,0.9);
 padding:40px;
 border-radius:12px;
 }
-
-/* PROJECT CARDS */
 
 .card img{
 height:250px;
@@ -95,9 +85,6 @@ transition:0.3s;
 <a class="navbar-brand">Architect Tanvi</a>
 </div>
 </nav>
-
-
-<!-- OWNER SECTION -->
 
 <section class="info-section">
 
@@ -226,7 +213,6 @@ data-bs-target="#project{{ project.id }}">
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-
 <script>
 
 function filterProjects(category){
@@ -236,19 +222,13 @@ let projects=document.querySelectorAll(".project-item");
 projects.forEach(function(project){
 
 if(category==="all"){
-
 project.style.display="block";
-
 }else{
 
 if(project.dataset.category===category){
-
 project.style.display="block";
-
 }else{
-
 project.style.display="none";
-
 }
 
 }
@@ -258,7 +238,6 @@ project.style.display="none";
 }
 
 </script>
-
 
 </body>
 </html>
