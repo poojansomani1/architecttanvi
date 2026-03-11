@@ -4,7 +4,7 @@ from django.db import models
 class Profile(models.Model):
     name = models.CharField(max_length=200)
     bio = models.TextField()
-    profile_image = models.ImageField(upload_to='profile/')
+    profile_image = models.ImageField(upload_to="profile/")
     email = models.EmailField()
     phone = models.CharField(max_length=20)
 
@@ -21,8 +21,8 @@ class Category(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=200)
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
-    cover_image = models.ImageField(upload_to='projects/')
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+    cover_image = models.ImageField(upload_to="projects/")
     description = models.TextField()
     location = models.CharField(max_length=200)
     year = models.IntegerField()
@@ -34,7 +34,7 @@ class Project(models.Model):
 
 class ProjectImage(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="images")
-    image = models.ImageField(upload_to='projects/gallery/')
+    image = models.ImageField(upload_to="projects/gallery/")
 
     def __str__(self):
-        return self.project.title
+        return f"{self.project.title} Image"

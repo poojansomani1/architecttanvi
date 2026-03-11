@@ -4,13 +4,21 @@ from .models import Profile, Category, Project, ProjectImage
 
 class ProjectImageInline(admin.TabularInline):
     model = ProjectImage
-    extra = 3
+    extra = 1
 
 
+@admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     inlines = [ProjectImageInline]
+    list_display = ('title', 'category', 'year', 'location')
+    search_fields = ('title', 'location')
 
 
-admin.site.register(Profile)
-admin.site.register(Category)
-admin.site.register(Project, ProjectAdmin)
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'phone')
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
