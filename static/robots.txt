@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://architecttanvi.onrender.com/sitemap.xml
