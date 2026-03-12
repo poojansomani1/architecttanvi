@@ -35,14 +35,10 @@ urlpatterns = [
     # SITEMAP URL
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 
-    # ROBOTS FILE
-    path(
-        "robots.txt",
-        TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
-    ),
+    # ADD THIS LINE
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
 
 
-# Serve media files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
